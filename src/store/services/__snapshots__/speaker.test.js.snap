@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`speaker services test suite > should fail and return an error 1`] = `[Error: error]`;
+
+exports[`speaker services test suite > should fail and return an error 2`] = `[Error: error]`;

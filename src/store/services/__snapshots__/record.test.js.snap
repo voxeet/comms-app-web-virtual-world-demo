@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`record services test suite > should succeed 1`] = `
+{
+  "response": {},
+}
+`;
+
+exports[`record services test suite > should succeed 2`] = `
+{
+  "response": {},
+}
+`;

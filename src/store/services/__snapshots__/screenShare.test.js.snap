@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`screen share services test suite > should return a resolved promise 1`] = `
+{
+  "response": {},
+}
+`;
+
+exports[`screen share services test suite > should return a resolved promise 2`] = `true`;

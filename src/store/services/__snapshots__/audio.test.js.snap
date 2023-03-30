@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`audio service test suite > should reject a promise while stopping remote audio 1`] = `
+{
+  "response": {},
+}
+`;
+
+exports[`audio service test suite > should return a resolved promise while starting local audio 1`] = `
+{
+  "response": {},
+}
+`;
+
+exports[`audio service test suite > should return a resolved promise while starting remote audio 1`] = `
+{
+  "response": {},
+}
+`;
+
+exports[`audio service test suite > should return a resolved promise while stopping local audio 1`] = `
+{
+  "response": {},
+}
+`;
+
+exports[`audio service test suite > should return a resolved promise while stopping remote audio 1`] = `
+{
+  "response": {},
+}
+`;

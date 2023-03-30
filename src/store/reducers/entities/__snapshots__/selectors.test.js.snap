@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`selectors it( suite > should return an array of selected entities 1`] = `
+[
+  {
+    "prop1": 1,
+  },
+  {
+    "prop1": 2,
+  },
+]
+`;
+
+exports[`selectors it( suite > should return an array of selected entities 2`] = `
+[
+  {
+    "prop1": 1,
+  },
+  {
+    "prop1": 2,
+  },
+]
+`;
+
+exports[`selectors it( suite > should return selected entity 1`] = `
+{
+  "prop1": 1,
+}
+`;

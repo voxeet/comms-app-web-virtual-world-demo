@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`dispatch setToken action, reducer should save token 1`] = `
+{
+  "token": "token",
+}
+`;

@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`conference service test suite > should return a promise containing a normalized conference 1`] = `
+{
+  "conferences": {
+    "123": {
+      "alias": "conference",
+      "id": "123",
+      "pinCode": "456",
+    },
+  },
+}
+`;
+
+exports[`conference service test suite > should return a promise containing a normalized conference 2`] = `
+{
+  "conferences": {
+    "123": {
+      "alias": "conference",
+      "id": "123",
+      "pinCode": "456",
+    },
+  },
+}
+`;
+
+exports[`conference service test suite > should return a resolved promise 1`] = `
+{
+  "response": {},
+}
+`;
+
+exports[`conference service test suite > should return the normalized local participant 1`] = `
+{
+  "participants": {
+    "123": {
+      "id": "123",
+      "name": "toto",
+      "type": "user",
+    },
+  },
+}
+`;

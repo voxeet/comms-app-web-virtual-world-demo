@@ -1,0 +1,50 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`data reducer test suite > should update the state - clean state 1`] = `
+{
+  "currentDeviceID": "123",
+  "currentSessionID": "785",
+}
+`;
+
+exports[`data reducer test suite > should update the state - curren session id 1`] = `
+{
+  "currentSessionID": "sessionID",
+}
+`;
+
+exports[`data reducer test suite > should update the state - current conference id 1`] = `
+{
+  "currentConferenceID": "conferenceId",
+}
+`;
+
+exports[`data reducer test suite > should update the state - current device id 1`] = `
+{
+  "currentDeviceID": "deviceId",
+}
+`;
+
+exports[`data reducer test suite > should update the state - current participant id 1`] = `
+{
+  "localParticipantID": "participantId",
+}
+`;
+
+exports[`data reducer test suite > should update the state - message id 1`] = `
+{
+  "messages": [
+    "messageId",
+  ],
+}
+`;
+
+exports[`data reducer test suite > should update the state - remove message id 1`] = `
+{
+  "messages": [
+    "1",
+    "2",
+    "3",
+  ],
+}
+`;

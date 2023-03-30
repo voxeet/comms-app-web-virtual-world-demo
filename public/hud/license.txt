@@ -1,0 +1,8 @@
+Model Information:
+* title:	HUD Screen Element 3
+* source:	https://sketchfab.com/3d-models/hud-screen-element-3-7ace26d12039414998b1a3a4a27c4ecc
+* author:	John Doe (https://sketchfab.com/Johndoe3D)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

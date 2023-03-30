@@ -1,0 +1,72 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`devices test  suite >  should succeed and return a list of devices 1`] = `
+{
+  "entities": {
+    "devices": {
+      "deviceId": {
+        "deviceId": "deviceId",
+        "groupId": "groupId",
+        "kind": "videoinput",
+        "label": "label",
+      },
+    },
+  },
+  "ids": [
+    "deviceId",
+  ],
+}
+`;
+
+exports[`devices test  suite > should fail and return an error 1`] = `
+{
+  "error": [Error: Async error],
+}
+`;
+
+exports[`devices test  suite > should fail and return an error 2`] = `
+{
+  "error": [Error: Async error],
+}
+`;
+
+exports[`devices test  suite > should fail and return an error 3`] = `[Error: Async error]`;
+
+exports[`devices test  suite > should fail and return an error 4`] = `[Error: Async error]`;
+
+exports[`devices test  suite > should succeed 1`] = `
+{
+  "response": {},
+}
+`;
+
+exports[`devices test  suite > should succeed 2`] = `
+{
+  "response": {},
+}
+`;
+
+exports[`devices test  suite > should succeed 3`] = `
+{
+  "response": {},
+}
+`;
+
+exports[`devices test  suite > should succeed and return a list of devices 1`] = `
+{
+  "entities": {
+    "devices": {
+      "deviceId": {
+        "groupId": "groupId",
+        "kind": "audioinput",
+        "label": "label",
+      },
+    },
+  },
+  "ids": [
+    "deviceId",
+  ],
+}
+`;
+
+exports[`devices test  suite > sshould fail and return an error 1`] = `[Error: Async error]`;

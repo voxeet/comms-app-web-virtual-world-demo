@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`entities test suite > dispatch add participant action, reducer should add one participant entity 1`] = `
+{
+  "participants": {
+    "participantId": {
+      "name": "toto",
+    },
+  },
+}
+`;
+
+exports[`entities test suite > dispatch leave conference action, reducer should return initial state 1`] = `{}`;
+
+exports[`entities test suite > dispatch remove participant action, reducer should remove one participant entity 1`] = `
+{
+  "participants": {},
+}
+`;
+
+exports[`entities test suite > dispatch update participant action, reducer should add one participant entity 1`] = `
+{
+  "participants": {
+    "participantId": {
+      "name": "toto",
+      "surname": "titi",
+    },
+  },
+}
+`;

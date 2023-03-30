@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`session services test suite > should succeed 1`] = `
+{
+  "response": {},
+}
+`;
+
+exports[`session services test suite > should succeed 2`] = `undefined`;

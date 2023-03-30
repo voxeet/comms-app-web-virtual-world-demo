@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`video saga test suite > should return a participant 1`] = `
+{
+  "name": "toto",
+}
+`;
