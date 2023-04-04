@@ -14,6 +14,7 @@ import { useAnimations, useGLTF } from "@react-three/drei";
 import { SkeletonUtils } from "three-stdlib";
 import { easing } from "maath";
 import round from "lodash.round";
+import useInterval from "../../hooks/useInterval.js";
 
 let phi = 0;
 let theta = 0;
@@ -51,6 +52,10 @@ export const LocalParticipant = ({
   const { camera } = useThree();
   const rapier = useRapier();
   const [index, setIndex] = useState(3);
+  const [nthTimeSinceLastPositionUpdate, setNthTimeSinceLastPositionUpdate] =
+    useState(0);
+  const [nthTimeSinceLastDirectionUpdate, setNthTimeSinceLastDirectionUpdate] =
+    useState(0);
 
   // declare reusable, non-persistent variables, just don't need these being recreated every frame
   const speed = new Vector3(walk / 2, jump, walk);
@@ -75,6 +80,84 @@ export const LocalParticipant = ({
     pitch.setFromAxisAngle(xAxis, theta);
     gaze.multiplyQuaternions(yaw, pitch).normalize();
   };
+
+  // update direction
+  useInterval(() => {
+    if (!id) return;
+
+    const pLocal = new Vector3(0, 0, -1);
+    const pWorld = pLocal.applyMatrix4(camera.matrixWorld);
+    const dir = pWorld.sub(camera.position).normalize();
+
+    const angleInRadian = Math.atan2(dir.z, dir.x);
+    const currentDirection = round(
+      (angleInRadian + Math.PI / 2) * (180 / Math.PI),
+      0
+    );
+
+    setNthTimeSinceLastDirectionUpdate(
+      (previousNthTime) => previousNthTime + 1
+    );
+
+    if (
+      Math.abs(currentDirection - direction) > 2 ||
+      nthTimeSinceLastDirectionUpdate > 100
+    ) {
+      direction = currentDirection;
+      setNthTimeSinceLastDirectionUpdate(0);
+
+      setDirection({
+        participantId: id,
+        direction: { x: 0, y: direction, z: 0 },
+      });
+    }
+  }, 60);
+
+  // update position
+  useInterval(() => {
+    if (!id) return;
+
+    if (api && api.current && api.current.translation) {
+      const proxyPosition = api.current.translation();
+      if (!proxyPosition) return;
+      const currentPosition = Object.values(vec3(proxyPosition));
+      setNthTimeSinceLastPositionUpdate(
+        (previousNthTime) => previousNthTime + 1
+      );
+
+      if (
+        !isTheSamePosition(currentPosition, position) ||
+        nthTimeSinceLastPositionUpdate > 20
+      ) {
+        position = currentPosition;
+
+        setPosition({
+          participantId: id,
+          position: {
+            x: round(position[0], 1),
+            y: round(position[1], 1),
+            z: round(position[2], 1),
+          },
+        });
+
+        setNthTimeSinceLastPositionUpdate(0);
+      }
+    }
+  }, 300);
+
+  // trigger animations
+  useInterval(() => {
+    if (!actions || !api || !api.current) return;
+    const proxyLinVel = api.current.linvel();
+    if (!proxyLinVel) return;
+    const linvel = vec3(proxyLinVel);
+
+    if (linvel.length() < 0.1) {
+      setIndex(2);
+    } else {
+      setIndex(6);
+    }
+  }, 100);
 
   useFrame((state, delta) => {
     if (!id || !api.current || !ref.current) return;
@@ -143,78 +226,6 @@ export const LocalParticipant = ({
     // In the clean-up phase, fade it out
     return () => actions[names[index]] && actions[names[index]].fadeOut(0.1);
   }, [index, actions, names]);
-
-  //animations
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!actions || !api || !api.current) return;
-      const proxyLinVel = api.current.linvel();
-      if (!proxyLinVel) return;
-      const linvel = vec3(proxyLinVel);
-
-      if (linvel.length() < 0.1) {
-        setIndex(2);
-      } else {
-        setIndex(6);
-      }
-    }, 100);
-    return () => clearInterval(interval);
-  });
-
-  // send rotation
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!id) return;
-
-      const pLocal = new Vector3(0, 0, -1);
-      const pWorld = pLocal.applyMatrix4(camera.matrixWorld);
-      const dir = pWorld.sub(camera.position).normalize();
-
-      const angleInRadian = Math.atan2(dir.z, dir.x);
-      const currentDirection = round(
-        (angleInRadian + Math.PI / 2) * (180 / Math.PI),
-        0
-      );
-
-      if (Math.abs(currentDirection - direction) > 2) {
-        direction = currentDirection;
-
-        setDirection({
-          participantId: id,
-          direction: { x: 0, y: direction, z: 0 },
-        });
-      }
-    }, 60);
-    return () => clearInterval(interval);
-    // eslint-disable-next-line
-  }, []);
-
-  // send position
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!id) return;
-
-      if (api && api.current && api.current.translation) {
-        const proxyPosition = api.current.translation();
-        if (!proxyPosition) return;
-        const currentPosition = Object.values(vec3(proxyPosition));
-        if (!isTheSamePosition(currentPosition, position)) {
-          position = currentPosition;
-
-          setPosition({
-            participantId: id,
-            position: {
-              x: round(position[0], 1),
-              y: round(position[1], 1),
-              z: round(position[2], 1),
-            },
-          });
-        }
-      }
-    }, 60);
-    return () => clearInterval(interval);
-    // eslint-disable-next-line
-  }, []);
 
   // set initial participant audio position
   useEffect(() => {
