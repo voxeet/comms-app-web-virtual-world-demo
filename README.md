@@ -2,16 +2,18 @@
     <img width="150" alt="Dolby.io Logo" src="https://res.cloudinary.com/apideck/icons/dolby-io">
 </div>
 
-<div align="center" style="margin-top: 20px">
-    <a href="https://app.netlify.com/sites/comms-web-demo/deploys"><img src="https://api.netlify.com/api/v1/badges/cfbc8999-f316-4b5a-b26e-2d98a7df0630/deploy-status" alt="Netlify Deployment Status"></a>
-</div>
-
 # Dolby.io Virtual World Web Application Demo
 
 > Discover an immersive spatial audio experience through a web application showcasing the Dolby.io Communications API's 
 > capabilities on a browser.
 
 ![Application Preview](./doc/browser-screenshot.jpeg)
+
+## Deploy status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7bd13be7-842a-4dc8-9fab-a8ef4d522e1a/deploy-status)](https://app.netlify.com/sites/comms-web-demo/deploys)
+
+## Deplyed application url
+[comms-web-demo](https://comms-web-demo.netlify.app)
 
 ## Features
 
@@ -22,6 +24,7 @@
 * Use audio capabilities (device selection, toggle local audio, ...),
 * Share your screen,
 * More to come...
+
 
 ## Requirements
 [![node](https://img.shields.io/badge/node-^16.19.1-orange.svg?style=flat)]() [![npm](https://img.shields.io/badge/npm-^8.19.3-blue.svg?style=flat)]()
