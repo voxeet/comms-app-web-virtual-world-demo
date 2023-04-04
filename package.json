@@ -1,5 +1,5 @@
 {
-  "name": "virtual-world-demo",
+  "name": "comms-web-demo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -29,7 +29,7 @@
     "@testing-library/react": "13.4.0",
     "@testing-library/user-event": "12.1.10",
     "@use-gesture/react": "10.1.6",
-    "@voxeet/voxeet-web-sdk": "3.9.0-beta.3",
+    "@voxeet/voxeet-web-sdk": "3.9.0",
     "history": "5.3.0",
     "leva": "^0.9.34",
     "lodash.get": "4.4.2",
