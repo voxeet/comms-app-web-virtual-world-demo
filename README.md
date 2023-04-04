@@ -9,6 +9,10 @@
 
 ![Application Preview](./doc/browser-screenshot.jpeg)
 
+## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Deploy status
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7bd13be7-842a-4dc8-9fab-a8ef4d522e1a/deploy-status)](https://app.netlify.com/sites/comms-web-demo/deploys)
 
