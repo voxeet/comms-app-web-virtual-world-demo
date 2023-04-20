@@ -13,6 +13,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Demo application deploy status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c9c9ef39-fd3b-44e2-8a40-6a8069384924/deploy-status)](https://app.netlify.com/sites/comms-web-demo/deploys)
+## Demo application url
+[comms-web-demo](https://comms-web-demo.netlify.app)
+
 
 ## Features
 
