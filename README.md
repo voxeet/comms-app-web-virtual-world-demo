@@ -13,6 +13,12 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Deploy status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c65fe468-a9cc-4063-b6dc-ce46c86b98cd/deploy-status)](https://app.netlify.com/sites/comms-web-demo/deploys)
+
+## Deployed application url
+[comms-web-demo](https://virtualworld.experience.dolby.io)
+
 ## Demo application deploy status
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c9c9ef39-fd3b-44e2-8a40-6a8069384924/deploy-status)](https://app.netlify.com/sites/comms-web-demo/deploys)
 ## Demo application url
@@ -86,11 +92,11 @@ If you want to build the application instead, run the following script:
 npm run build
 ```
 
-Once done, an application built in production mode, could be served as follows :
+Once done, you can locally preview the production build :
 
 ```bash
-npm install --global serve    # if not already installed
-serve ./dist
+npm run preview
+
 ```
 
 ### Testing
