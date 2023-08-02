@@ -4,7 +4,7 @@
 
 # Dolby.io Virtual World Web Application Demo
 
-> Discover an immersive spatial audio experience through a web application showcasing the Dolby.io Communications API's 
+> Discover an immersive spatial audio experience through a web application showcasing the Dolby.io Communications API's
 > capabilities on a browser.
 
 ![Application Preview](./doc/browser-screenshot.jpeg)
@@ -16,13 +16,9 @@
 ## Deploy status
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c65fe468-a9cc-4063-b6dc-ce46c86b98cd/deploy-status)](https://app.netlify.com/sites/comms-web-demo/deploys)
 
-## Deployed application url
-[comms-web-demo](https://virtualworld.experience.dolby.io)
+## Deployed application
+[virtual world experience](https://virtualworld.experience.dolby.io)
 
-## Demo application deploy status
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c9c9ef39-fd3b-44e2-8a40-6a8069384924/deploy-status)](https://app.netlify.com/sites/comms-web-demo/deploys)
-## Demo application url
-[comms-web-demo](https://comms-web-demo.netlify.app)
 
 
 ## Features
@@ -44,7 +40,7 @@
 
 ## Setup
 
-Clone this repository to your desktop: 
+Clone this repository to your desktop:
 
 ```bash
 git clone https://github.com/dolbyio-samples/comms-web-demo.git
@@ -60,7 +56,7 @@ npm install
 ## Environment settings
 
 Once the dependencies are installed, create a .env file at the root of this project.
-Edit it as follow: 
+Edit it as follow:
 
 ```bash
 VITE_CLIENT_ACCESS_TOKEN=[CLIENT_ACCESS_TOKEN]      # your client access token, retrieved from Dolby.io (if you don't have a valid authentication server).
@@ -76,7 +72,7 @@ VITE_PUBNUB_SUBSCRIBER_KEY=[PUBNUB_SUBSCRIBER_KEY]  # PubNub subscriber applicat
 
 ### Debug
 
-Once the dependencies are installed, you can run the following command to start the application in development mode: 
+Once the dependencies are installed, you can run the following command to start the application in development mode:
 
 ```bash
 npm run dev
@@ -101,9 +97,9 @@ npm run preview
 
 ### Testing
 
-To run unit tests, run one of the following commands: 
+To run unit tests, run one of the following commands:
 
-Watch mode: 
+Watch mode:
 ```bash
 npm run test   
 ```
